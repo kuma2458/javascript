@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            text-align: center;
+        }
+        .red{
+            color: red;
+        }
+        .blue{
+            color: blue;
+        }
+
+    </style>
+    <script>
+        //1~10까지 출력하는 반복문
+        let i =1;
+        while(i<11){
+            if(i%2==0){
+                document.write("<p class='blue'>"+i+"</p>");
+            }
+            else{
+                document.write("<p class='red'>"+i+"</p>");
+            }
+
+            i++;
+        }
+        //백틱
+        //백틱을 이용한 태그 조립 방법
+        //인터프리터 언어 : 한줄씩 읽어들여서 해석하기 때문에 세미콜론을 안써도됨
+        i =1;
+        let tag='';
+        while(i<11){
+            if(i%2==0){
+                tag+=`<p class=blue>${i}</p>`
+            }
+            else{
+                tag+= `<p class="red">${i}</p>`
+            }
+            i++;
+        }
+        document.write(tag);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
