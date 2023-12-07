@@ -3,3 +3,17 @@ console.log : 콘솔에 로그 기록
 var : 변수 선언용, 다만 요새는 잘 안씀
 let : var대신 최근에 많이 쓰는 변수선언
 const : 자바의 final,상수 선언
+
+타입까지 비교하고싶으면 관계연산자에 =를 하나 더씀
+
+document.write로 쓴거에 p태그를 붙이고 싶으면
+>> document.write("<p class='blue'>"+i+"</p>");
+
+백틱을 이용한 태그 조립
+>> let tag ='';
+    tag+=`<p class=blue>${i}</p>`
+    >> `<사용할태그>${넣을값}</사용할태그>`
+
+prompt : 입력받기
+>> prompt('메세지 내용','기본값')
+typeof : 타입확인

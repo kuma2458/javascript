@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 중첩</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;   
+        }
+        .main_container{
+            width: 1200px;
+            height: 600px;
+            margin: 0 auto;
+
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .sub_container{
+            float: left;
+            text-align: center;
+        }
+        .sub_container p{
+            text-align: center;
+            width: 220px;
+            margin: 20px 0px;
+        }
+    </style>
+    <script>
+        let tag1=`<div class="main_container">`;
+        for(let i =2; i<10; i++){
+            tag1+=`<div class="sub_container"><h1>${i} 단</h1>`
+            for (let j =1; j<10; j++){
+                tag1+=`<p>${i} * ${j} = ${i*j}</p>`
+            }
+            tag1+=`</div>`
+        }
+        tag1+=`</div>`
+        document.write(tag1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
