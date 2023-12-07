@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+    <script>
+
+            let score=Math.floor(Math.random()*100);   
+            document.write(`<p>${score}</p>`);
+            score=Math.floor(score/10); 
+
+
+        //스위치로 작성
+        switch(score){
+            case 10:
+            case 9:
+                document.write('A');
+                break;
+            case 8:
+                document.write('B');
+                break;    
+            case 7:
+                document.write('C');
+                break;
+            case 6:
+                document.write('D');
+                break;
+            default:
+                document.write('F');
+                break;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
