@@ -1,0 +1,5 @@
+document.write : 작성
+console.log : 콘솔에 로그 기록
+var : 변수 선언용, 다만 요새는 잘 안씀
+let : var대신 최근에 많이 쓰는 변수선언
+const : 자바의 final,상수 선언
