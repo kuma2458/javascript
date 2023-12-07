@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            float: left;
+            margin-right: 10px;
+        }
+        .boldtext{
+            font-weight: bold;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+    <script>
+        let tag='';
+        for(let i =1; i<101; i++){
+            tag+='<p class="'
+            if(i%3==0 || i%9==0){
+                tag+='red';
+            }
+            if(i%5==0 || i%9==0) {
+                tag+=' boldtext';
+            }     
+            tag+= `">${i}</p>`
+                
+        }
+        document.write(tag);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
