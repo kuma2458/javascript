@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표만들기</title>
+    <style>
+        table{
+            margin: 0 auto;
+            box-sizing: border-box;
+            border-collapse: collapse;
+        }
+        tr,td{
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+    <script>
+        let tag=`<table>`;
+        let n=1;
+        for(let i=0; i<5; i++){
+            tag+=`<tr>`
+                for(let j=0; j<5; j++){
+                    tag+=`<td>${n}</td>`
+                    n++; 
+                }
+            tag+=`</tr>`
+        }
+        tag+=`</table>`
+        document.write(tag);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
