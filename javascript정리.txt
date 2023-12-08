@@ -47,3 +47,10 @@ history : 앞으로가기 뒤로가기
 function forward(){
     history.forward();
 }
+<button onclick="forward();"> 앞으로 가기 </button>
+ <button onclick="location.reload();">새로고침</button>
+
+ location.reload() = 새로고침
+ location.href = 해당 링크로 이동
+
+ navigator.userAgent = 유저 접속 정보
