@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+    <script>
+        // 오늘 날짜정보 획득
+        let today = new Date();
+        document.write(today.toLocaleDateString(),"<br>");
+        document.write("년도 : ",today.getFullYear(),"<br>");
+        document.write("월 : ",today.getMonth(),"<br>");
+        document.write("일 : ",today.getDate(),"<br>");
+        document.write("요일 : ",today.getDay(),"<br>");
+        document.write("시 : ",today.getHours(),"<br>");
+        document.write("분 : ",today.getMinutes(),"<br>");
+        document.write("초 : ",today.getSeconds(),"<br>");
+
+        document.write(today.getFullYear(),"년 ",today.getMonth()+1,"월 ",today.getDate(),"일<br>");
+
+        //날짜 정보의 밀리초값
+        document.write(today.getTime(),"<br>");
+
+        //원하는 날짜 정보 지정
+        // let sunday = new Date(2023,11,10,17,22,33);
+        let sunday = new Date("2023-12-10 17:22:33");
+
+        document.write(sunday.toLocaleString(),"<br>");
+
+        //현재 날짜의 월 초 날짜를 구하는 방법
+        let first= new Date(today.getFullYear(),today.getMonth());
+
+        document.write(first.toLocaleDateString(),"<br>");
+
+        //현재 날짜의 월 말일 날짜를 구하는 방법
+        let last= new Date(today.getFullYear(),today.getMonth()+1,0);
+        document.write(last.toLocaleDateString());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
