@@ -41,3 +41,4 @@ str.substr : substr(startidx,n) startidx부터 n개 추출
 str.substring : substr(startidx,endidx) startidx부터 endidx 전까지 추출
 
 alert = 경고창, 팝업
+confirm : 확인용 팝업, 예 : true 아니오 : false 값 출력
