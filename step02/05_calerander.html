@@ -4,6 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table{
+            margin: 0 auto;
+            border-collapse: collapse;
+
+        }
+        caption{
+            font-weight: bold;
+            font-size: 2em;
+        }
+        th{
+            height: 30px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        td{
+            width: 100px;
+            padding: 5px;
+            height: 100px;
+            border: 1px solid black;
+            text-align: right;
+            vertical-align: top;
+        }
+        td:first-child,th:first-child{
+            color: red;
+        }
+        td:last-child,th:last-child{
+            color: blue;
+        }
+        .disable{
+            color: gray !important;
+        }
+
+
+    </style>
     <script>
         //1. 오늘 날짜 생성
         let today=new Date();
@@ -20,12 +60,30 @@
         console.log(today.toLocaleDateString());
         console.log(firstday.toLocaleDateString());
         console.log(lastday.toLocaleDateString());
-        console.log(fsunday.toLocaleDateString());
+        console.log(fsunday.getDate());
         console.log(lsaturday.toLocaleDateString());
         console.log(callnum);
+        //테이블 태그 조립
+        //요일 먼저 조립
+        //달력 일수 조립
 
+        let tag='<table><caption>12월</caption><tr><th class="sunday">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th class="saturday">토</th>';
+        for(let i =0; i<callnum; i++){
+            tag+='<tr>';
+            for(let j=0; j<7; j++){
+                let ClassValue='';
+                if(fsunday.getMonth()!=today.getMonth()){
+                    ClassValue='disable';
+                }
+                tag+=`<td class="${ClassValue}">${fsunday.getDate()}</td>`;
+                fsunday.setDate(fsunday.getDate()+1);
+                
+            }
+            tag+='</tr>';
+        }
+        tag+='</table>';
 
-
+        document.write(tag);
 
 
     </script>
