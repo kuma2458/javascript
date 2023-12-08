@@ -40,4 +40,4 @@ str
 str.substr : substr(startidx,n) startidx부터 n개 추출
 str.substring : substr(startidx,endidx) startidx부터 endidx 전까지 추출
 
-
+alert = 경고창, 팝업
