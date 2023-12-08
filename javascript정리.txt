@@ -29,3 +29,15 @@ isNaN : 숫자가 아닌지 판별하는 함수. 숫자면 false, 아니면 true
 date = 시간함수
 new Date();
 
+math.floor : 내림
+math.ceil : 올림
+math.round : 반올림
+math.random : 난수
+1~45 : math.floor(math.random()*45)+1
+
+str
+
+str.substr : substr(startidx,n) startidx부터 n개 추출
+str.substring : substr(startidx,endidx) startidx부터 endidx 전까지 추출
+
+
