@@ -43,6 +43,14 @@
         }
         console.log(lotto);
         
+        let tag='<table><caption>로또</caption>';
+
+            for(i=0; i<lotto.length; i++){
+                tag+=`<tr><td>${lotto[i].join('</td><td>')}</td></tr>`;
+
+            }
+            tag+='</table>';
+        document.write(tag);
 
     </script>
 </head>
