@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //null : 내용이 비었다. null도 값임
+        //undefined : 값이 없다.
+        function sum(a,b){
+            console.log(a,b);
+            return a+b;
+        }
+        console.log('sum 함수 결과: ',sum(10,5));
+        let result = sum(10,5);
+        document.write(`<p>sum 함수 결과: ${result}</p>`);
+        document.write(`<p>sum 함수 결과: ${sum()}</p>`);
+
+        function minus(a,b){
+            document.write(`<p>minus 함수 결과: ${a-b}</p>`);
+        }
+        document.write(`<p>minus 함수 결과: ${minus(10,20)}</p>`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

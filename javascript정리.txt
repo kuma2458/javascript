@@ -101,3 +101,7 @@ find(e,i,arr)
 배열요소들을 하나로 합치기 = join('요소들 사이사이에 집어넣을 것')
 
 특정문자를 기준으로 쪼개기 = split 
+
+function 
+매개변수에 값을 넣지않으면 -> undefined
+return 할 값이 없는데 return하면 -> NaN
