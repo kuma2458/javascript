@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table{
+            margin: 0 auto;
+            margin-top: 10px;
+            border-collapse: collapse;
+        }
+        h1{
+            margin-bottom: 10px;
+        }
+
+        tr,td{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    </style>
+
+    <script>
+        let tag='<table><caption><h1>로또번호</h1></caption>';
+
+
+        
+        for(i=0; i<5; i++){
+            tag+='<tr>'
+            for(j=0; j<6; j++){
+                let lotto_arr=[];
+                for (let i=0; i<6; i++){
+                    let lotto_num=Math.floor(Math.random()*45)+1;
+                    console.log(lotto_num);
+                    if(lotto_arr.indexOf(lotto_num)!=-1){
+                        i--;
+                        continue;
+                    }
+                    
+                    lotto_arr.push(lotto_num);
+                }
+                console.log(lotto_arr);
+                tag+=`<td>${lotto_arr[i]}</td>`;
+            }
+            tag+='</tr>';
+        }
+        tag+='</table>';
+
+        document.write(tag);
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
