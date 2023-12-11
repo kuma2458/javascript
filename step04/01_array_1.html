@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //배열 생성
+        let arr=[10,20,true,3.1415,'test'];
+
+        document.write('<h2>배열값을 가져오는 방법 -1</h2>');
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i],"<br>");
+            
+        }
+        
+        document.write('<h2>배열값을 가져오는 방법 -2</h2>');
+        for(i in arr){
+            document.write(i,"<br>");
+        }
+        //자바식으로 쓰면 script에서는 배열번호가 나옴
+        //그래서 i in arr하고 arr[i]써야됨
+        //1번이랑 2번차이점은 인덱스 번호를 꺼내오는거라 값 수정 가능함
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

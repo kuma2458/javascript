@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //배열 생성
+        // let arr=[]; 첫번째 방법
+        let arr= new Array(); // 두번째 방법
+
+        //데이터 추가
+        arr.push(10);
+        arr.push(20);
+        arr.push(true);
+        arr.push(3.1415);
+        arr.push('test');
+        arr.push(1);
+
+        
+        //데이터 전체 출력
+        document.write(`<p>${arr}</p>`);
+        console.log(arr);
+
+        //배열 내용 검색
+        document.write(`<p>값이 3.1415인 인덱스 번호 찾기 : ${arr.indexOf(3.1415)}</p>`);
+        document.write(`<p>값이 3.1415인 인덱스 번호 찾기 : ${arr.indexOf(31415)}</p>`);
+
+        //find - 데이터를 가공해서 상세하게 검색이 가능
+        let result= arr.find((e,i,arr) => e <20);
+        document.write(`<p>20보다 작은 값: ${result}</p>`);
+
+        //람다식
+        result= arr.find((e,i,arr) => {
+            console.log(e,i,arr)
+                if(e<20){
+                    document.write(`<p>값이 3.1415인 인덱스 번호 찾기 : ${arr.indexOf(31415)}</p>`);
+                    return true;
+
+                }
+                return false;
+        });
+        
+        //fuction 
+        result= arr.find(function(e,i,arr) {
+            console.log(e,i,arr)
+                if(e<20){
+                    document.write(`<p>값이 3.1415인 인덱스 번호 찾기 : ${arr.indexOf(31415)}</p>`);
+                    return true;
+
+                }
+                return false;
+        });
+        document.write(`<p>20보다 작은 값: ${result}</p>`);
+
+
+        //배열 요소 삭제
+        arr.pop(); //마지막에 저장된 겂 삭제
+        document.write(`<p>${result}</p>`);
+        
+        document.write(arr,"<hr>");
+        document.write(arr.slice(1,3),'<hr>');//배열 부분 추출 - 기존 배열 변경이 없음
+        document.write(arr);
+
+        document.write(arr,"<hr>");
+        document.write(arr.splice(3,2),'<hr>');//배열 부분 추출 - 기존 배열 변경이 됨
+        document.write(arr);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

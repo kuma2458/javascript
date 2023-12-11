@@ -54,3 +54,50 @@ function forward(){
  location.href = 해당 링크로 이동
 
  navigator.userAgent = 유저 접속 정보
+ -------------------------------------
+ 12월 11일 
+
+ javascript의 배열은 타입을 정하지않고 그냥 다 넣을 수 있음
+
+
+find(e,i,arr) 
+>>arr 에서 e 값을 찾는거
+람다식이랑 fuction 있음
+        result= arr.find((e,i,arr) => {
+            console.log(e,i,arr)
+                if(e<20){
+                    document.write(`<p>값이 3.1415인 인덱스 번호 찾기 : ${arr.indexOf(31415)}</p>`);
+                    return true;
+
+                }
+                return false;
+        });
+        
+        //fuction 
+        result= arr.find(function(e,i,arr) {
+            console.log(e,i,arr)
+                if(e<20){
+                    document.write(`<p>값이 3.1415인 인덱스 번호 찾기 : ${arr.indexOf(31415)}</p>`);
+                    return true;
+
+                }
+                return false;
+        });
+
+
+
+
+ slice = 그냥 잘라서 출력, 원본에 영향 x
+ splice= 잘라서 출력, 자른값은 원본에서 삭제
+
+
+ 배열합치기
+ 1.concat
+ >> 배열1.concat(합칠배열2)
+ >> 괄호안에 여러개넣어도됨
+
+2. for문 돌려서 push로 집어넣기
+
+배열요소들을 하나로 합치기 = join('요소들 사이사이에 집어넣을 것')
+
+특정문자를 기준으로 쪼개기 = split 
