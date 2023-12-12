@@ -159,3 +159,20 @@ reduce
 ㄴacc=합산하여 저장하는 공간
 ㄴcur=요소들 중 현재 값
 ㄴidx =인덱스번호값
+
+
+스크립트에서 body의 태그들을 선택하는 방법
+스크립트에서 body태그 값들을 불러오고싶으면 body밑에 script작성
+
+ㄴgetElementById('아이디값')
+ㄴgetElementByTagName('태그')
+
+태그.innerHTML : 태그 안의 값을 가져옴
+
+attribute는 html 문서상에서 태그에 추가적인 정보, 옵션들을 사용할때 쓰는 요소
+property는 동적으로 값을 변하게 해주는 요소들
+예를 들면 라디오 버튼, 체크박스에서 checked를 넣으면 attribute로 시작할때 고정적으로 설정되는 요소임
+그런데 내가 마우스로 클릭해서 체크가 되거나 풀릴 때 바뀌는 값이 property
+
+쉽게말해 attribute는 정적인 시작할때 정해지는 값, property는 내가 원할때 바꿀수 있는 값
+
