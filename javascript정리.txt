@@ -179,3 +179,6 @@ property는 동적으로 값을 변하게 해주는 요소들
 12월 13일
 window.onload : 문서(body쪽)를 다 읽은 후에 실행됨
 onclick : 마우스 이벤트
+
+이벤트 발생 막고싶을떄
+>> 매개변수.preventDefault();

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        window.onload=()=>{
+            //구글 링크와, 네이버 링크 선택
+            let google1=document.querySelector("#google");
+            let naver1=document.querySelector('#naver');
+
+            //각 링크를 클릭하면, '해당 페이지로 이동합니다' 라는 경고창 출력
+            google1.onclick=(e)=>{
+                alert('구글로 이동합니다');
+                e.preventDefault();
+            }
+            naver1.onclick=function(){
+                alert('네이버로 이동합니다');
+                return false;
+            }
+            
+
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <a href="https://www.google.com" id="google">구글로 아동</a>
+    <a href="https://www.naver.com" id="naver">네이버로 이동</a>
+
+    
+</body>
+</html>
