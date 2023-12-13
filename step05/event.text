@@ -6,6 +6,14 @@
     onmousedown : 마우스의 버튼을 눌렀을 때
     onmouseup : 마우스의 버튼을 눌렀다가 때었을 때
     onmousemove : 마우스 움직일때
+    onmouseover : 해당 태그 위로 마우스를 올려놨을 때
+    onmouseout : 해당 태그에서 마우스가 벗어났을 때
+    onmouseenter : 해당 태그 위로 마우스를 올려놨을 때
+    onmouseleave : 해당 태그에서 마우스가 벗어났을 때
+    onscroll : 스크롤바 동작
+
+
+
 키보드
 
 폼

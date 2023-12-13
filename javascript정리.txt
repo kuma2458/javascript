@@ -182,3 +182,11 @@ onclick : 마우스 이벤트
 
 이벤트 발생 막고싶을떄
 >> 매개변수.preventDefault();
+
+화살표나 function 매개변수칸에 변수를 넣어서 메서드 실행가능
+
+onmouseover,onmouseout 단점 : 해당 태그 내에 있어도 태그 내에 있는 다른 태그에 올라가면 out 판정이됨
+이를 보완하기위한 함수 
+>> onmouseenter, onmouseleave
+
+this. 를 쓰고 싶으면 화살표말고 익명함수 function() 사용
