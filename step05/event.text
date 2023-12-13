@@ -4,7 +4,8 @@
     onclick : 마우스를 클릭 했을 때
     ondblclick: 마우스를 더블 클릭 했을 때
     onmousedown : 마우스의 버튼을 눌렀을 때
-    onmouuseup : 마우스의 버튼을 눌렀다가 때었을 때
+    onmouseup : 마우스의 버튼을 눌렀다가 때었을 때
+    onmousemove : 마우스 움직일때
 키보드
 
 폼
