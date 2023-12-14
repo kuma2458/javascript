@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <style>
+        #area{
+            display: inline-block;
+            width: 100px;
+            padding: 0px 10px;
+            height: 16px;
+            line-height: normal;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        window.onload=()=>{
+            let sel=document.querySelector("#host");
+            let email=document.querySelector("#email");
+            let a=sel.value;
+            let area=document.querySelector("#area");
+            sel.onchange=function(){
+                a=this.value;
+            }
+            email.onchange=function(){
+                console.log(this.value,'@',sel[a].innerHTML);
+                area.innerHTML=`${this.value}@${sel[a].innerHTML}`;
+            }
+            console.log(sel.value);
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="email">@
+    <select id="host">
+        <option value="0">gmail.com</option>
+        <option value="1">naver.com</option>
+        <option value="2">hanmail.net</option>
+        <option value="3">nate.com</option>
+        <option value="4">직접입력</option>
+    </select>
+    <span id="area"></span>
+</body>
+</html>
