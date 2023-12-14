@@ -190,3 +190,15 @@ onmouseover,onmouseout 단점 : 해당 태그 내에 있어도 태그 내에 있
 >> onmouseenter, onmouseleave
 
 this. 를 쓰고 싶으면 화살표말고 익명함수 function() 사용
+
+열렸다 닫히는 느낌 나게 하는거 : transition = 1s all;
+
+Height 종류
+
+clientHeight : css 상의 길이값 + padding영역까지의 길이값
+offsetHeight : css 상의 길이값 + padding영역 + 테두리(border) 길이값
+scrollHeight : css 상의 길이값 + padding영역 + 테두리(border) 길이값
+------------------------------
+12월 14일
+obj.nextElementSibling : 현재 태그의 다음 형제 요소
+obj.previousElementSibling : 현재 태그의 이전 형제 요소
