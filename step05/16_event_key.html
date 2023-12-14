@@ -9,6 +9,16 @@
         window.onload = () => {
            let txt=document.querySelector("#txt");
            let  area= document.querySelector("#area");
+           txt.onkeydown=(e)=>{
+            console.log(`현재 누른 키보드 키 : ${e.keyCode}`);
+           }
+           txt.onkeypress=(e)=>{
+            console.log(`.현재 누르고 있는 키보드 키 : ${e.keyCode}`);
+           }
+           txt.onkeyup=(e)=>{
+            console.log(`.현재 눌렀다 떼는 키보드 키 : ${e.keyCode}`);
+            area.innerHTML=`현재 눌렀다 떼는 키보드 키 : ${e.keyCode}`;
+           }
         }
     </script>
 </head>
