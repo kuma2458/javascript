@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <script>
+        window.onload = () => {
+            document.querySelector("#frm").onsubmit=(e)=>{
+                //아이디와 비밀번호가 각각 6자리 이상 입력되야 전송이 되게끔 처리
+                //6자리이상 입력되지 않으면 경고창 발생 및 sumbit 이벤트 처리 중단
+                let id_length = document.querySelector("#id").value.length;
+                let pass_length=document.querySelector("#pass").value.length;
+                if(id_length<6 || pass_length<6){
+                    alert('아이디와 비밀번호는 각각 6자리 이상 입력되야 합니다.');
+                    e.preventDefault();
+                }
+
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="" id="frm">
+        <input type="text" id="id" name="id"><br>
+        <input type="password" id="pass" name="pass"><br>
+        <button>로그인</button>
+    </form>
+</body>
+</html>
