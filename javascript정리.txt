@@ -202,3 +202,6 @@ scrollHeight : css 상의 길이값 + padding영역 + 테두리(border) 길이�
 12월 14일
 obj.nextElementSibling : 현재 태그의 다음 형제 요소
 obj.previousElementSibling : 현재 태그의 이전 형제 요소
+
+setInterval : 일정시간마다 반복실행함
+>> setInterval(()=>{},반복시간텀)
