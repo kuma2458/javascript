@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 500px;
+            border: 1px solid black;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+
+        }
+        #main_img{
+            width: 400px;
+            height: 400px;
+        }
+        .sub_container{
+            width: 400px;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 1px solid black;
+            position: relative;
+        }        
+        .thum_container{
+            width: 720px;
+            font-size: 0px;
+            position: relative;
+
+        }
+        .left_b{
+            background-image: url('image/left_arrow.png');
+            background-repeat: no-repeat;
+            border: none;
+            left: 0px;
+        }
+        .right_b{
+            background-image: url('image/right_arrow.png');
+            background-repeat: no-repeat;
+            border: none;
+            right: 0px;
+        }
+        button{
+            width: 40px;
+            height: 80px;
+            position: absolute;
+            bottom: 0px;
+        }
+        .thum_container img{
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+    </style>
+    <script>
+
+        window.onload=()=>{
+            let thumnailBarWidth = document.querySelector('.sub_container').clientWidth;
+            let thumnailWidth = document.querySelector('.thum_container').clientWidth;
+            let main_img=document.querySelector("#main_img");
+            document.querySelectorAll(".thum_container img").forEach((e,idx)=>{
+                e.style.opacity=0.5;
+                e.onclick=()=>{
+                    document.querySelector("#main_img").src=e.src;
+                    document.querySelectorAll(".thum_container img").forEach(function(e1){
+                        if(e1==e){
+                            e1.style.opacity=1;
+                        }
+                        else{
+                            e1.style.opacity=0.5;
+                        }
+                    })
+                }
+            })
+
+            let count=0;
+            document.querySelector(".right_b").onclick=()=>{
+                count++;
+                let li = document.querySelector('.thum_container img:first-child');
+                li.style.marginleft='-80px';
+                    // e.style.left=`${e.style.left}`+`${(-80*right_count)}px`;
+                document.querySelector(".thum_container").append(li);
+                console.log(document.querySelector(".thum_container").style.left,count);
+                document.querySelector(".thum_container img:first-child").onclick();
+                }
+
+                document.querySelector(".left_b").onclick=()=>{
+                    count--;
+                    let li = document.querySelector('.thum_container img:last-child');
+                    li.style.marginleft='-80px';
+                    document.querySelector(".thum_container").prepend(li);
+                    li.style.marginleft='0px';
+                    document.querySelector(".thum_container img:first-child").onclick();
+                    // e.style.left=`${e.style.left}`+`${(-80*right_count)}px`;
+                    console.log(document.querySelector(".thum_container").style.left,count);
+    
+                }
+            }
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="image/1.jpg" id="main_img" alt="">
+        <div class="sub_container">
+            <div class="thum_container">
+                    <img src="image/1.jpg" alt="">
+                    <img src="image/2.jpg" alt="">
+                    <img src="image/3.jpg" alt="">
+                    <img src="image/4.jpg" alt="">
+                    <img src="image/5.jpg" alt="">
+                    <img src="image/6.jpg" alt="">
+                    <img src="image/7.jpg" alt="">
+                    <img src="image/8.jpg" alt="">
+                    <img src="image/9.jpg" alt="">
+            </div>
+            
+        </div>
+        <button class="left_b"></button>
+        <button type="button" class="right_b"></button>
+    </div>
+</body>
+</html>
