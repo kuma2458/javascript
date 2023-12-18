@@ -205,3 +205,96 @@ obj.previousElementSibling : 현재 태그의 이전 형제 요소
 
 setInterval : 일정시간마다 반복실행함
 >> setInterval(()=>{},반복시간텀)
+
+querySelector.append(객체) : 객체를 뒤로 보내서 추가하기
+ document.querySelector('.thumnail').prepend(li) : 객체를 앞으로 보내서 추가하기
+
+
+ opacity : 투명도
+
+ ------------------------------
+ 12월 18일
+
+ ajax = 정보만 받아와서 새로고침하기, 페이지를 새로고침해서  새로만들지않음
+
+ RequestInfo 
+
+
+ let request= new XMLHttpRequest();
+ >> 서버에서 데이터 받아온 결과값
+
+request.currenttarget = request.send()로 받아온 결과값중 현재 내가 설정한 상황의 결과값
+request.currenttarget.response =  내가 원하는 결과값
+
+  request.addEventListener(이벤트이름,함수)
+
+  자바쿼리
+  development 랑 min 차이
+
+  min - > minified : 최소화 버전(파일크기를 줄이기 위해 주석, 공백, 기타 문자들을 제거 한 버전
+  )
+
+  자바쿼리 기본 형태
+  $(넣을 내용)
+
+  jquery css 적용 형태
+    $('p').css('style 태그 이름','적용할 설정')
+  jquery value 값 가져오는법
+  >> .val()
+  css는 객체로 선언해서 한번에 다 적을수 잇음
+  >>            $('#wrap>h1').css({'background-color':'yellow',
+            'text-decoration':'underline'
+            });
+  자식 선택할때는 .children() 사용 가능
+  다음 태그 선택할때에는 .next() 사용
+  형 요소 선택은 .prev()
+  동생, 형 요소 전부 다 선택시에는 .nextAll  / .prevAll
+  나 빼고 전부 선택 
+  >> .siblings()
+
+  .nextUntil() / .prevUntil() 
+  >> 선택자를 선언하지 않았으면 끝까지 적용시키지만, 선택자를 선언하면 해당 선택자 전까지만 적용시킴
+
+  부모요소 선택자
+  .parent()
+
+  내 부모들 모두 선택
+  >> .parents()
+
+  자식들중 첫번쨰 , 마지막 요소 선택
+  >> .first() / .last()
+
+  무리(그룹) 별로 첫번째, 마지막 요소 선택
+  >> $('선택자:first-of-type') / $('선택자:last-of-type')\
+
+  인덱스 번호별로 짝수, 홀수
+  >> :odd / :even
+
+  :nth-child
+
+  .eq(n) = n번째 인덱스 번호 선택
+
+  :gt(n) = n보다 큰 요소들 선택
+  :lt(n) = n보다 작은 요소들 선택
+  :only-child = 형제 요소가 없는 것을 선택함
+
+  n번째부터 m번째까지 구간 선택
+  >> .slice(시작인덱스,끝인덱스)
+
+  [] : 속성값 확인
+  [a=b] : a속성이 b이면 해당됨
+  [a^=b] : a속성의 시작값이 b이면 해당됨
+  [a$=b] : a속성의 끝나는값이 b이면 해당됨
+  [a*=b] : a속성에 b값이 들어가있으면 해당됨
+
+  속성값 수정할때는
+  .attr()
+  checked나 readonly같은 선언만 하는 요소들 집어넣을떄는 true false 사용
+
+  class나 attr 지우고싶을때 : removeClass() / removeAttr()
+
+  prop : 현재 실행되고있는 요소의 동적인 속성값
+
+  우리가 나중에 접근하는 속성들은 다 property
+
+  toggleclass = on off 되는 형식

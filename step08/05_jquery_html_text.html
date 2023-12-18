@@ -9,7 +9,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(function () {
+           //innerHTML :태그까지 가져옴
+           console.log($('#d3').html());
+           //innerText :텍스트만 가져옴
+           console.log($('#d3').text());
+
+           //innerHTML을 jQuery 담당 부분 --> 완성한 태그를 넣는 용도, 태그속성을 적용시켜줌
+            $('#d1').html('<h2>제목태그</h2>');
+           //innertext를 jQuery 담당 부분 --> 태그에 있는 텍스트를 넣는 용도. 태그 적용은 안됨
            
+           $('#d2').text('<h2>제목태그</h2>');
         });
     </script>
 </head>

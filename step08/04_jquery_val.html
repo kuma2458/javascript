@@ -10,7 +10,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(function () {
-          
+          //txt에 입력한 value값 로그로 출력
+            console.log($('#txt').attr('value'),$('#txt').prop('value'));
+            console.log($('#txt').val());
+
+            //val()  : property value 값  읽어옴
+            $('#btn').click(function(){
+                console.log($('#txt').attr('value'),$('#txt').prop('value'));
+            console.log($('#txt').val());
+            $('#txt').val('안녕하세요');
+            console.log($('#txt').attr('value'),$('#txt').prop('value'));
+            console.log($('#txt').val());
+            })
         });
     </script>
 </head>
