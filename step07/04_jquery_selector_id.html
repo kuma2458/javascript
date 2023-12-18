@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(()=>{
+            //로그인버튼 선택
+          $('button').click(function(){
+            //아이디와 암호에 입력된 값을 읽어와서 콘솔에다가출력
+
+            console.log($('#id').val(),$('#password').val());
+            //아이디와 암호 값을 result 영역에 출력
+            $('#result').html($('#id').val()+" "+$('#password').val());
+          });
+          //매개변수가없으면 값을 읽어오거나 실행함
+          //매개변수 넣으면 이벤트넣음
+           
+        });
+                       
+    </script>
+</head>
+<body>
+    <input type="text" id="id"> <input type="password" id="password">
+    <button>로그인</button>
+    <hr>
+    <div id="result"></div> 
+</body>
+</html>
