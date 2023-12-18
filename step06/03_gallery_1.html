@@ -24,33 +24,42 @@
         .sub_container{
             width: 400px;
             overflow: hidden;
-            margin: 0 auto;
             border: 1px solid black;
+            margin: 0 auto;
             position: relative;
         }        
         .thum_container{
             width: 720px;
             font-size: 0px;
+
             position: relative;
 
         }
         .left_b{
-            background-image: url('image/left_arrow.png');
+            width: 49px;
+            height: 80px;
+            background-image: url("image/left_arrow.png");
             background-repeat: no-repeat;
+            background-position-x: -6px;
             border: none;
+
             left: 0px;
         }
         .right_b{
-            background-image: url('image/right_arrow.png');
+            width: 49px;
+            height: 80px;
+            background-image: url("image/right_arrow.png");
             background-repeat: no-repeat;
+            background-position-x: -10px;
             border: none;
             right: 0px;
         }
         button{
-            width: 40px;
-            height: 80px;
             position: absolute;
             bottom: 0px;
+            box-sizing: border-box;
+            border-collapse: collapse;
+            font-size: 0;
         }
         .thum_container img{
             width: 80px;
@@ -59,8 +68,18 @@
         }
     </style>
     <script>
-
+        let count=0;
+        function right_scroll(){
+            count++;
+                let li = document.querySelector('.thum_container img:first-child');
+                li.style.marginleft='-80px';
+                    // e.style.left=`${e.style.left}`+`${(-80*right_count)}px`;
+                document.querySelector(".thum_container").append(li);
+                console.log(document.querySelector(".thum_container").style.left,count);
+                document.querySelector(".thum_container img:first-child").onclick();
+        }
         window.onload=()=>{
+            let interval_id = setInterval(right_scroll,3000);
             let thumnailBarWidth = document.querySelector('.sub_container').clientWidth;
             let thumnailWidth = document.querySelector('.thum_container').clientWidth;
             let main_img=document.querySelector("#main_img");
@@ -79,16 +98,9 @@
                 }
             })
 
-            let count=0;
-            document.querySelector(".right_b").onclick=()=>{
-                count++;
-                let li = document.querySelector('.thum_container img:first-child');
-                li.style.marginleft='-80px';
-                    // e.style.left=`${e.style.left}`+`${(-80*right_count)}px`;
-                document.querySelector(".thum_container").append(li);
-                console.log(document.querySelector(".thum_container").style.left,count);
-                document.querySelector(".thum_container img:first-child").onclick();
-                }
+
+            interval_id;
+            document.querySelector(".right_b").onclick=right_scroll;
 
                 document.querySelector(".left_b").onclick=()=>{
                     count--;
