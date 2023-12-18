@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 640px;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: column nowrap;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 0px;
+            position: relative;
+        }
+        .banner_con{
+            width: 640px;
+            display: flex;
+            flex-flow: row nowrap;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 0px;
+            position: relative;
+            overflow: hidden;
+        }
+        .banner_con img{
+            position: relative;
+        }
+        a{
+            position: absolute;
+        }
+        .left_arrow{
+            left: 0px;
+            bottom: calc(100%/2);
+            /* background-color: rgba(128, 128, 128, 0.274); */
+            
+        }
+        .right_arrow{
+            right: 0px;
+            bottom: calc(100%/2);
+        }
+    </style>
+    <script>
+        function left_click(){
+            let a = document.querySelector('.banner_con img:first-child ');
+                console.log(a);
+                a.style.marginleft='-640px';
+                document.querySelector('.banner_con').append(a);
+        }
+        window.onload=()=>{
+           let b= setInterval(left_click,2000);
+            document.querySelector('.left_arrow').onclick=left_click;
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="banner_con">
+            <img src="img1/grill1.jpg" alt="">
+            <img src="img1/grill2.jpg" alt="">
+            <img src="img1/grill3.jpg" alt="">
+        </div>
+        <a class="left_arrow"><img src="image/left_arrow.png" alt=""></a>
+        <a class="right_arrow"><img src="image/right_arrow.png" alt=""></a>
+    </div>
+</body>
+</html>

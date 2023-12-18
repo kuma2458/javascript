@@ -298,3 +298,7 @@ request.currenttarget.response =  내가 원하는 결과값
   우리가 나중에 접근하는 속성들은 다 property
 
   toggleclass = on off 되는 형식
+
+  append = 추가
+
+  appendto = 순서만 뒤바꿔서 스는거
