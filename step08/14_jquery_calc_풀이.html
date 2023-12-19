@@ -10,10 +10,14 @@
     <script>
         $(function () {
             $('button').click(function(){
-                let tag=$('#op').val();
-                    
-                $('#result').val(eval(Number($('#n1').val())+$('#op').val()+Number($('#n2').val())));
-                $('#history').append(`<p>${$('#n1').val()} ${$('#op').val()} ${$('#n2').val()} =  ${$('#result').val()} ${new Date().toLocaleString()}</p>`);
+                let n1 =Number($('#n1').val());
+                let n2 =Number($('#n2').val());
+                let op =$('#op').val();
+
+                let result=eval(`${n1}${op}${n2}`);
+                $('#result').val(result);
+                $('#history').append(`<p>${n1} ${op} ${n2} = ${result} ${new Date().toLocaleString()}</p>`)
+
             })
         });
     </script>

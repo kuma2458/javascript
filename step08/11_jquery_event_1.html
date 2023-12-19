@@ -14,13 +14,26 @@
             border: 1px solid black;
             transition-property: all;
             transition-duration: 1s;
+
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        $(function () {
-          
+        $(function(){
+            $('#box1').mouseover (function(){
+          $(this).css('background-color','red');
         });
+
+        //마우스가 b1에 벗어났을 때 배경색 제거
+        $('#box1').mouseout(function(){
+            $(this).css('background','none');
+        })
+        //#box2를 클릭할 때 마다 배경색을 랜덤하게 바꿈
+        $('#box2').click(function(){
+            $(this).css('background-color',`rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`);
+        })
+        })
+
     </script>
 </head>
 

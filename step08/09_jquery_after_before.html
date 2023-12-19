@@ -8,7 +8,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(function(){
-         
+            //after은 지정한 태그 뒤에 집어넣는 느낌
+         $('#child').after('<li>after - 1</li>');
+         $('#child').after('<li>after - 2</li>');
+         $('#child').after('<li>after - 3</li>');
+         $('<li>after - 4</li>').insertAfter($('#child'));
+
+
+         $('#child').before('<li>before - 1</li>');
+         $('#child').before('<li>before - 2</li>');
+         $('#child').before('<li>before - 3</li>');
+         $('<li>before - 4</li>').insertBefore($('#child'));
         });
     </script>
 </head>
