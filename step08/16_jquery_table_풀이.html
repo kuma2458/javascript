@@ -32,14 +32,31 @@
     <script>
         $(function () {
             //미션1. 데이터입력후 입력버튼 클릭시 테이블에 추가하도록 만들기(앞뒤 상관 X)
-
-
-
+            console.log($('input,setect'));
+            let arr= Array.from($('button').prevAll()).reverse();
             $('button').click(function(){
-                let name=$('thead td').children('input').val();
-                console.log(name); 
-                console.log($('tbody td').html());
+
+                //동적 엘리먼트 추가 후 이벤트 처리도 해줘야 함
+                let tag=arr.reduce((acc,cur,ind)=>acc+`<td>${$(cur).val()}</td>`,'<tr>')+"</tr>";
+                $(tag).appendTo('tbody').click(function(){
+                    if(confirm('정말 삭제하시겠습니까?')){
+
+                        $(this).remove();
+                        }
+                });
             })
+            console.log(arr.reduce((acc,cur,ind)=>acc+`<td>${$(cur).val()}</td>`,'<tr>')+"</tr>");  
+
+            //미션2. 목록 눌러서 삭제
+            $('tbody td').click(function(){
+                if(confirm('정말 삭제하시겠습니까?')){
+
+                    $(this).parent().remove();
+                }
+                console.log($(this).parent());
+            })
+
+
 		});
     </script>
 </head>

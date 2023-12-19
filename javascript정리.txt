@@ -315,3 +315,22 @@ request.currenttarget.response =  내가 원하는 결과값
   
   after = 지정태그 밑으로 동생요소 추가
   before = 지정태그 위로
+
+  .on()= 이벤트 여러개 지정
+  .off() = 이벤트 제거
+  .eval() = 게산식
+
+  .hide(시간초,함수) = 숨기기
+  .show(시간초) =보여주기
+  .toggle(시간초) = 껏다켜기
+  .stop().hide() = 기존에 실행되던 애니메이션 종료하고 hide 실행
+
+  .fadein(시간초) : 검은화면에서 점점보여짐
+  .fadeout(시간초) : 점점 검은화면으로 전환
+  .fadteto(시간초,비율) : 원하는 비율만큼 페이드아웃
+
+  .slideUp(시간초) : 해당태그내용을 세로방향으로 줄여버림
+  .slideDown(시간초) : 해당태그내용을 세로방향으로 늘림
+  .slideToggle(시간초) : 해당태그내용을 왓다갔다
+
+  .siblings() : 나 이외의 다른 모든 태그

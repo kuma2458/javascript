@@ -102,6 +102,109 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         //자바스크립트로 했던 예제를 가져와서 jquery로 변경
+        //아이디 값이 정상인치 체크하는 함수
+        //1.글자수 8~20글자 사이
+        //2. 숫자만 쓰면 X
+        //규칙에 만족하면 true, 만족하지 않으면 false
+        function checkId(){
+
+            let reg=/(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,20}$/
+            if(!reg.test($('#id').val())){
+                $('.id_result').html('아이디는 8글자 이상 20자 이하,숫자와 영어 혼합으로 입력하세요');
+                $('.id_result').addClass('false');
+                return false;  
+            }
+            // if(id.value.length>20||id.value.length<8){
+            //     document.querySelector(".id_result").innerHTML='아이디는 8글자 이상 20자 이하로 입력하세요';
+            //     document.querySelector(".id_result").classList.add("false");
+            //     return false;
+            // }
+            // if(!isNaN(id.value)){
+            //     document.querySelector(".id_result").innerHTML='숫자만 쓰지 마세요'
+            //     document.querySelector(".id_result").classList.add("false");
+            //     return false;
+            // }
+            $('.id_result').html('사용이 가능한 아이디입니다.');
+            $('.id_result').addClass('true');
+            $('.id_result').removeClass('false');
+            return true;
+            
+        }
+        function checkPassword(){
+            let reg=/(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*~])[A-za-z\d!@#$%^&*~]{8,32}/;
+            if(!reg.test($('#pass').val())){
+                $(".pass_result").html('비밀번호는 8~32글자 사이, 영어,숫자,특수문자를 혼합하여 쓰세요');
+                $(".pass_result").addClass("false");
+                return false;  
+            }
+            if($('#pass').val()!=$("#pass_chk").val()){
+                $(".pass_result").html('비밀번호가 일치하지 않습니다');
+                $(".pass_result").addClass("false");
+                return false; 
+            }
+            $(".pass_result").html('사용가능');
+            $(".pass_result").addClass("true");
+            $(".pass_result").removeClass("false");
+            return true;  
+            //1. 두번 입력한 암호가 서로 일치하는지?
+            //2. 암호도 8~32글자만 허용
+            //3. 특수문자가 포함되어 있는지, 대소문자,숫자 1글자씩 반드시 포함
+        }
+        function checkNick(){
+            //닉네임 기능
+            //1. 닉네임은 20글자까지만 입력이 가능하게끔 처리
+            //2. 입력한 글자개수를 0/20형식으로 sub_txt에 넣음
+            //3. 최소한 한글자는 입력해야 함
+            let reg=/^[.\S]{1,20}/;
+            $("#nick").val($("#nick").val().substr(0,20));
+
+
+            $("#nick").next().text(`${n$("#nick").val().length}/20`);
+
+            if(!reg.test($("#nick").val())){
+                $('#nick').addClass('false');
+                $('#nick').removeClass('true');
+                return false;
+            }
+            $('#nick').addClass('true');
+            $('#nick').removeClass('false');
+            return true;
+
+                }
+
+        //전화번호 체크하는 함수
+        function checkTel(){
+            
+            let reg=/^01([0|1|6|7|8|9])-\d{3,4}-\d{4}$/;
+            //let reg=/^01([0|1|6|7|8|9])-\d{3,4}-\d{4}$/;
+            //let reg=/^01([0|1|6|7|8|9])\d{3,4}\d{4}$/;
+
+            if(!reg.test($("#tel").val())){
+                $('#tel').addClass('false');
+                $('#tel').removeClass('true');
+                return false;
+            }
+            $('#tel').addClass('true');
+            $('#tel').removeClass('false');
+            return true; 
+        }
+        window.onload=()=>{
+            //아이디 확인
+            $("#id").keyup(checkId);
+            //비밀번호 확인
+            $("#pass").keyup(checkPassword);
+            $("#pass_chk").keyup(checkPassword);
+            //닉네임 확인
+            $("#nick").keyup(checkNick);
+            //전화번호 확인
+            $("#tel").keyup(checkTel);
+            //폼연결
+            $("#frm").onsubmit=(e)=>{
+                if(!checkId()||!checkPassword()|!checkNick()|!checkTel()){
+                    e.preventDefault();
+                }
+            }
+        }
 
     </script>
 </head>
