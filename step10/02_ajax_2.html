@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function RequestInfo(){
+            let queryString=`txt=${$('#txt').val()}`;
+            $.ajax({
+                url:'http://nam2626.dothome.co.kr/papago_1.php',
+                data:queryString,
+                type:"POST",
+                dataType:"json",
+                success:function(r){
+                    $('.result').html(r.message.result.translatedText);
+                }
+            })
+        }
+        $(()=>{
+           $('button').click(RequestInfo);
+
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button>번역하기</button>
+    <div class="result"></div>
+</body>
+</html>

@@ -334,3 +334,5 @@ request.currenttarget.response =  내가 원하는 결과값
   .slideToggle(시간초) : 해당태그내용을 왓다갔다
 
   .siblings() : 나 이외의 다른 모든 태그
+  .not() : 지정한것 이외의 태그들
+  $(window).scroll() = 스크롤바움직이는거

@@ -42,8 +42,9 @@
     <script>
         $(function(){
           $('h2').click(function(){
-            $(this).addClass('select').siblings('h2').removeClass('select');
-            $(this).next().addClass('active').siblings('p').removeClass('active');
+            $('h2').not($(this)).removeClass('select');
+            $(this).addClass('select').next().slideDown(500);
+            $('p').not($(this).next()).slideUp(500);
           })
         });
     </script>
