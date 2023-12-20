@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .container{
+            width: 1200px;
+            border: 1px solid black;
+            margin:0 auto;
+            position: relative;
+        }
+        .img_con{
+            display: flex;
+            flex-flow: row nowrap;
+            overflow: hidden;
+        }
+        ul{
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+        ul li{
+            margin: 0px 5px;
+            width: 25px;
+            height: 25px;
+            border: 1px solid black;
+            border-radius: 50px;
+        }
+        .select{
+            background-color: rgba(128, 128, 128, 0.445);
+        }
+        a{
+            position: absolute;
+            top: 0px;
+            width: 50px;
+            height: 400px;
+            background-color: rgba(255, 255, 255, 0.432);
+        }
+        a:hover{
+            background-color: rgba(255, 255, 255, 0.747);
+        }
+        #left_arrow{
+            background-image: url("image/left_arrow.png");
+            background-repeat: no-repeat;
+            background-position-y: 170px;
+            background-position-x: -7px;
+            left: 0px;
+        }
+        #right_arrow{
+            background-image: url("image/right_arrow.png");
+            background-repeat: no-repeat;
+            background-position-y: 170px;
+            background-position-x: -7px;
+            right: 0px;
+        }
+    </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        let count=0;
+        let dmove=false;
+        function left_arrow_move(){
+            if(dmove) return;
+            dmove=true;
+            $('.img_con img').first().animate({
+                'margin-left':'-1200px'
+            },1000,function(){
+                dmove=false;
+                $(this).appendTo('.img_con').css('margin-left','0px');
+                count++;
+                if(count==4) count=0;
+                $('ul li').eq(count).addClass('select').siblings().removeClass('select');
+            })
+        }
+        window.onload=()=>{
+            let interval_id=setInterval(left_arrow_move,3000);
+
+            $("#left_arrow").click(function(){
+                left_arrow_move();
+                clearInterval(interval_id);
+            });
+            $("#right_arrow").click(function(){
+                if(dmove) return;
+                dmove=true;
+                $('.img_con img').last().css('margin-left','-1200px').prependTo('.img_con').animate({
+                'margin-left':'0px'
+            },1000,function(){
+                dmove=false;
+                console.log('a');
+                count--;
+                if(count==-1) count=3;
+                $('ul li').eq(count).addClass('select').siblings().removeClass('select');
+                clearInterval(interval_id);
+            });
+            });
+
+            $('ul li').click(function(){})
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="img_con">
+            <img src="image/main_1.jpg" alt="">
+            <img src="image/main_2.jpg" alt="">
+            <img src="image/main_3.jpg" alt="">
+            <img src="image/main_4.jpg" alt="">
+        </div>
+        <a href="#" id="left_arrow"></a>
+        <a href="#" id="right_arrow"></a>
+        <ul>
+            <li class="select"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

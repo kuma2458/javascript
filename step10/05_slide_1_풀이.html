@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .slide_container{
+            width: 1200px;
+            margin: 0 auto;
+            font-size: 0px;
+            overflow: hidden;
+            position: relative;
+            border:1px solid black ;
+        }
+        .slide_img_container{
+            width: 4800px;
+            list-style-type: none;
+        }
+        .slide_img_container li{
+            width: 1200px;
+            float: left;
+        }
+        .slide_container button{
+            position: absolute;
+            height: 100%;
+            background-color: #ffffff80;
+            top: 0px;
+            border: none;
+        }
+        .slide_container button:hover{
+            background-color: #ffffffce;
+        }
+        .right_arrow{
+            right:0px;
+        }
+        .left_arrow{
+            left: 0px;
+        }
+        .radio_bar{
+            width: 100%;
+            position: absolute;
+            bottom:0px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            z-index: 2;
+        }
+        .radio{
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border: 2px solid #c9c9c9;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        .select{
+            background-color: #ffffffce;
+        }
+    </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            let slideWidth=$('.slide_img_container li').width();
+            let status=false;
+            let bullet_idx=0;
+            $('.left_arrow').click(function(){
+                if(status) return;
+                status=true;
+                $('.slide_img_container li').first().animate({
+                    'margin-left':`-${slideWidth}px`
+                },3000,function(){
+                    $(this).appendTo('.slide_img_container').css('margin-left','0px');
+                    status=false;
+                    bullet=++bullet_idx%4;
+                    $('.radio').eq(bullet).addClass("select").siblings().removeClass("select");
+                })
+            });
+            $('.left_arrow').click(function(){
+                if(status) return;
+                status=true;
+                $('.slide_img_container li').last().css('margin-left',`-${slideWidth}px`).prependTo('.slide_img_container li').animate({
+                    'maring-left':'0px'
+                },3000,function(){
+                    status=false;
+                })
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="slide_container">
+        <ul class="slide_img_container">
+            <li><img src="image/main_1.jpg" alt=""></li>
+            <li><img src="image/main_2.jpg" alt=""></li>
+            <li><img src="image/main_3.jpg" alt=""></li>
+            <li><img src="image/main_4.jpg" alt=""></li>
+        </ul>
+        <button class="left_arrow"><img src="image/left_arrow.png" alt=""></button>
+        <button class="right_arrow"><img src="image/right_arrow.png" alt=""></button>
+        <ul class="radio_bar">
+            <li class="radio select"></li>
+            <li class="radio"></li>
+            <li class="radio"></li>
+            <li class="radio"></li>
+        </ul>
+    </div>
+</body>
+</html>
